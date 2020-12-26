@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/assets/js",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "target": "es5",
+    "lib": ["es5", "es6", "dom"],
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "sourceMap": true
+  }
+}
