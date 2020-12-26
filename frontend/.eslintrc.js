@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
   rules: {
+    'arrow-parens': ['warn', 'as-needed'],
     'react/jsx-one-expression-per-line': 'off',
     'implicit-arrow-linebreak': 'off',
     'no-console': ['warn', { allow: ['tron', 'warn', 'error'] }],
