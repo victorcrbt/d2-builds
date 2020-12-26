@@ -2,10 +2,9 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-
 const htmlPlugin = new HtmlWebpackPlugin({
-  template: './public/index.html'
-})
+  template: './public/index.html',
+});
 
 const config: webpack.Configuration = {
   mode: 'development',
@@ -13,6 +12,7 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
+      '@src': path.resolve(__dirname, 'src'),
       '@assets': path.resolve(__dirname, 'src', 'assets'),
       '@components': path.resolve(__dirname, 'src', 'components'),
       '@config': path.resolve(__dirname, 'src', 'config'),
@@ -26,7 +26,7 @@ const config: webpack.Configuration = {
       '@services': path.resolve(__dirname, 'src', 'services'),
       '@store': path.resolve(__dirname, 'src', 'store'),
       '@styles': path.resolve(__dirname, 'src', 'styles'),
-    }
+    },
   },
 
   devtool: '#cheap-module-eval-source-map',
@@ -34,17 +34,17 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/, 
-        loader: 'ts-loader'
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         loader: 'file-loader',
-      }
-    ]
+      },
+    ],
   },
 
-  plugins: [htmlPlugin]
-}
+  plugins: [htmlPlugin],
+};
 
 export default config;

@@ -6,19 +6,20 @@ import { Options as FileLoaderOptions } from 'file-loader';
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './public/index.html',
   filename: './index.html',
-})
+});
 
 const config: webpack.Configuration = {
   mode: 'production',
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
+      '@src': path.resolve(__dirname, 'src'),
       '@assets': path.resolve(__dirname, 'src', 'assets'),
       '@components': path.resolve(__dirname, 'src', 'components'),
       '@config': path.resolve(__dirname, 'src', 'config'),
@@ -32,26 +33,26 @@ const config: webpack.Configuration = {
       '@services': path.resolve(__dirname, 'src', 'services'),
       '@store': path.resolve(__dirname, 'src', 'store'),
       '@styles': path.resolve(__dirname, 'src', 'styles'),
-    }
+    },
   },
 
   module: {
     rules: [
       {
-        test: /\.tsx$/, 
+        test: /\.tsx$/,
         loader: 'ts-loader',
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         loader: 'file-loader',
         options: {
-          outputPath: './assets/images'
-        } as FileLoaderOptions
-      }
-    ]
+          outputPath: './assets/images',
+        } as FileLoaderOptions,
+      },
+    ],
   },
 
-  plugins: [htmlPlugin]
-}
+  plugins: [htmlPlugin],
+};
 
 export default config;
