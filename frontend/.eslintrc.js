@@ -16,7 +16,13 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'import',
+    'eslint-plugin-import-helpers',
+  ],
   rules: {
     'arrow-parens': ['warn', 'as-needed'],
     'react/jsx-one-expression-per-line': 'off',
