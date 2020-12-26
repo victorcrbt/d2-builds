@@ -8,7 +8,7 @@ const context = getFileNames();
 
 const files = context
   .keys()
-  .filter(file => !file.match(/(index)/))
+  .filter(file => !file.match(/(index|missing)/))
   .reduce((translations, currentFile) => {
     const fileTranslations = context(currentFile)?.default;
 
