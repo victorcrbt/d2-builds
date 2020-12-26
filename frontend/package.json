@@ -11,8 +11,11 @@
     "build": "webpack --mode production --config webpack.prod.ts"
   },
   "dependencies": {
+    "i18next": "^19.8.4",
+    "lodash": "^4.17.20",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-i18next": "^11.8.4",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
@@ -21,10 +24,12 @@
   "devDependencies": {
     "@types/file-loader": "^4.2.0",
     "@types/html-webpack-plugin": "^3.2.4",
+    "@types/lodash": "^4.14.166",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.14",
     "@types/webpack": "^4.41.25",
+    "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
     "eslint": "^7.16.0",
