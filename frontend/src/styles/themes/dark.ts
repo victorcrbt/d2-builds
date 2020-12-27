@@ -5,6 +5,8 @@ import global from './global';
 export default {
   ...global,
 
+  name: 'dark',
+
   colors: {
     primary: '#7711c8',
     darkPrimary: '#530C8D',
