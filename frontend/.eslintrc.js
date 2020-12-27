@@ -21,7 +21,6 @@ module.exports = {
     '@typescript-eslint',
     'prettier',
     'import',
-    'eslint-plugin-import-helpers',
   ],
   rules: {
     'arrow-parens': ['warn', 'as-needed'],
