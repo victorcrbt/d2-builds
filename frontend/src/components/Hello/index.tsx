@@ -5,12 +5,14 @@ import { useTranslation } from 'react-i18next';
 
 import { HELLO_USER } from '@constants/i18n/general';
 
+import { Title } from './styles';
+
 const Hello: React.FC = () => {
   const { t } = useTranslation();
 
   const { name } = useSelector((state: ApplicationState) => state.user);
 
-  return <h1>{t(HELLO_USER, { name })}</h1>;
+  return <Title>{t(HELLO_USER, { name })}</Title>;
 };
 
 export default Hello;
