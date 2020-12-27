@@ -1,12 +1,20 @@
 import path from 'path';
-import webpack from 'webpack';
+import { Configuration } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './public/index.html',
 });
 
-const config: webpack.Configuration = {
+interface DevServer {
+  devServer: {
+    historyApiFallback: boolean;
+  };
+}
+
+type WebpackConfig = Configuration & DevServer;
+
+const config: WebpackConfig = {
   mode: 'development',
   entry: './src/index.tsx',
   resolve: {
@@ -29,6 +37,10 @@ const config: webpack.Configuration = {
     },
   },
 
+  devServer: {
+    historyApiFallback: true,
+  },
+
   devtool: '#cheap-module-eval-source-map',
 
   module: {
@@ -43,8 +55,8 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
-      }
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
 
