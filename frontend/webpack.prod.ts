@@ -49,6 +49,10 @@ const config: webpack.Configuration = {
           outputPath: './assets/images',
         } as FileLoaderOptions,
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }
     ],
   },
 
