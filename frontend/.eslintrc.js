@@ -16,13 +16,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'prettier',
-    'import',
-    'eslint-plugin-import-helpers',
-  ],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
   rules: {
     'arrow-parens': ['warn', 'as-needed'],
     'react/jsx-one-expression-per-line': 'off',
@@ -80,7 +74,7 @@ module.exports = {
           ['@contexts', './src/contexts'],
           ['@helpers', './src/helpers'],
           ['@hocs', './src/hocs'],
-          ['@hooks', './hooks/components'],
+          ['@hooks', './src/hooks'],
           ['@i18n', './src/i18n'],
           ['@pages', './src/pages'],
           ['@services', './src/services'],
